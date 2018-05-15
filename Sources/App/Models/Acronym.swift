@@ -20,7 +20,15 @@ extension Acronym {
   }
 }
 
+extension Acronym: Migration {
+  static func prepare(on connection: PostgreSQLConnection) -> Future<Void> {
+    return Database.create(self, on: connection) { builder in
+      try addProperties(to: builder)
+      try builder.addReference(from: \.userID, to: \User.id)
+    }
+  }
+}
+
 extension Acronym: PostgreSQLModel {}
-extension Acronym: Migration {}
 extension Acronym: Parameter {}
 extension Acronym: Content{}
