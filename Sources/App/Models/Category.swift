@@ -10,7 +10,13 @@ final class Category: Codable {
   }
 }
 
+extension Category {
+  var acronyms: Siblings<Category, Acronym, AcronymCategoryPivot> {
+    return siblings()
+  }
+}
+
 extension Category: PostgreSQLModel {}
 extension Category: Content {}
 extension Category: Migration {}
-extension Catgory: Parameter {}
+extension Category: Parameter {}
