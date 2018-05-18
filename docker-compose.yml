@@ -7,9 +7,9 @@ services:
     environment:
       - DATABASE_HOSTNAME=postgres
       - DATABASE_PORT=5432
-    postgres:
-      image: "postgres"
-      environment:
-        - POSTGRES_DB=vapor-test
-        - POSTGRES_USER=vapor
-        - POSTGRES_PASSWORD=password
+  postgres:
+    image: "postgres"
+    environment:
+      - POSTGRES_DB=vapor-test
+      - POSTGRES_USER=vapor
+      - POSTGRES_PASSWORD=password
