@@ -35,4 +35,28 @@ extension Application {
     
     return try JSONDecoder().decode(type, from: response.http.body.data!)
   }
+  
+  func getResponse<T, U>(to path: String,
+                         method: HTTPMethod = .GET,
+                         headers: HTTPHeaders = .init(),
+                         data: U,
+                         decodeTo type: T.Type) throws -> T where T: Decodable, U: Encodable {
+    let body = try HTTPBody(data: JSONEncoder().encode(data))
+    return try self.getResponse(to: path,
+                                method: method,
+                                headers: headers,
+                                body: body,
+                                decodeTo: type)
+  }
+  
+  func sendRequest<T>(to path: String,
+                      method: HTTPMethod,
+                      headers: HTTPHeaders,
+                      data: T) throws where T: Encodable {
+    let body = try HTTPBody(data: JSONEncoder().encode(data))
+    _ = try self.sendRequest(to: path,
+                             method: method,
+                             headers: headers,
+                             body: body)
+  }
 }
