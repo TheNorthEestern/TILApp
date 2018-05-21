@@ -5,7 +5,7 @@ let package = Package(
     name: "TILApp",
     dependencies: [
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
-        .package(url: "https://github.com/vapor/fluent-postgresql", from: "1.0.0-rc")
+        .package(url: "https://github.com/vapor/fluent-postgresql", from: "1.0.0-rc"),
         .package(url: "https://github.com/vapor/leaf.git", from: "3.0.0-rc")
     ],
     targets: [
