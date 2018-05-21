@@ -1,10 +1,12 @@
 import FluentPostgreSQL
 import Vapor
+import Leaf
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
   /// Register providers first
   try services.register(FluentPostgreSQLProvider())
+  try services.register(LeafProvider())
   
   /// Register routes to the router
   let router = EngineRouter.default()
@@ -32,7 +34,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
       databasePort = 5433
     }
   } else {
-    databaseName = Environment.get("DATABASE_DB") ?? "Vapor"
+    databaseName = Environment.get("DATABASE_DB") ?? "vapor"
     databasePort = 5432
   }
   
@@ -59,4 +61,5 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
   var commandConfig = CommandConfig.default()
   commandConfig.use(RevertCommand.self, as: "revert")
   services.register(commandConfig)
+  config.prefer(LeafRenderer.self, for: ViewRenderer.self)
 }
