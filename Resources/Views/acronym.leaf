@@ -2,5 +2,10 @@
   <h1>#(acronym.short)</h1>
   <h2>#(acronym.long)</h2>
   <p>By <a href="/users/#(user.id)/">#(user.name)</a></p>
+  <!-- <a href="/acronyms/#(acronym.id)/edit" role="button">Edit</a> -->
+  <form method="post" action="/acronyms/#(acronym.id)/delete">
+    <a href="/acronyms/#(acronym.id)/edit" role="button">Edit</a>&nbsp;
+    <input type="submit" value="Delete" />
+  </form>
 }
 #embed("base")

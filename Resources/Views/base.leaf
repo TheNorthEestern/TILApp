@@ -4,27 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-<title>#(title) | Acronyms</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <title>#(title) | Acronyms</title>
 </head>
 <body>
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
-<div class="navbar-brand">
-<a class="navbar-item" href="/">
-<img src="/images/til.svg">
-</a>
-</div>
-<div id="navbarExampleTransparentExample" class="navbar-menu">
-<div class="navbar-start">
-<a class="navbar-item" href="/users/">
-Users
-</a>
-</div>
-</div>
-</nav>
-<div class="section">
-    #get(body)
-</div>
+  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/"><img src="/images/til.svg"></a>
+    </div>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/users/"> Users </a>
+        <a class="navbar-item" href="/categories/"> Categories </a>
+        <a class="navbar-item" href="/acronyms/create/"> Create An Acronym </a>
+      </div>
+    </div>
+  </nav>
+  <div class="section">
+      #get(body)
+  </div>
 </body>
 </html>
