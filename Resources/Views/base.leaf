@@ -4,8 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  #if(title == "Create An Acronym") {
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+select2/4.0.3/css/select2.min.css"
+crossorigin="anonymous">
+}
+#if(title == "Edit Acronym") {
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/
+select2/4.0.3/css/select2.min.css" crossorigin="anonymous">
+} 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+ crossorigin="anonymous"></script>
+#// 2
+#if(title == "Edit Acronym") {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/
+select2.min.js" crossorigin="anonymous"></script>
+#// 3
+  <script src="/scripts/createAcronym.js"></script>
+}
+#if(title == "Create An Acronym") {
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/
+select2.min.js" crossorigin="anonymous"></script>
+  <script src="/scripts/createAcronym.js"></script>
+}
   <title>#(title) | Acronyms</title>
 </head>
 <body>
