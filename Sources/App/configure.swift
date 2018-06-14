@@ -36,7 +36,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     }
   } else {
     databaseName = Environment.get("DATABASE_DB") ?? "vapor"
-    databasePort = 5432
+    databasePort = 1234
   }
   
   let password = Environment.get("DATABASE_PASSWORD") ?? "password"
